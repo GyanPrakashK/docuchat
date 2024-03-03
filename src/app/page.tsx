@@ -1,10 +1,14 @@
+"use client"
 import MaxWidhWrapper from "@/component/MaxWidhWrapper";
-import { buttonVariants } from "@/components/ui/button";
+// import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { Button } from "@/components/ui/moving-btn";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
  < MaxWidhWrapper className=" mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center ">
@@ -12,15 +16,20 @@ export default function Home() {
 <p className="text-sm font-semibold text-gray-700">DocuChat is public?</p>
  </div>
  <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
-    chat with your <span className="text-blue-600">Document</span> in seconds.
+    Chat with your <span className="text-blue-600">Document</span> in seconds.
  </h1>
  <p className=" mt-5 max-w-prose text-zinc-700 sm:text-lg">
-  docuChat allow to chat with any PDF.Simply Upload your file & start chat in right way
+  DocuChat allow to chat with any PDF.Simply Upload your file & start chat in right way
  </p>
- <Link className={buttonVariants({
+ {/* <Link className={buttonVariants({
   size:"lg",
   className:"mt-5"
- })} href="/dashboard" target="_blank">Get Start<ArrowRight className="ml-2 h-5 w-5"/></Link>
+ })} href="/dashboard" target="_blank">Get Start<ArrowRight className="ml-2 h-5 w-5"/></Link> */}
+  <div className="mt-5">
+   <Link href="/dashboard" target="_blank">
+    <Button >Get Started <ArrowRight className="mx-2"/></Button>
+   </Link>
+  </div>
   </ MaxWidhWrapper>
   <div>
     <div className="relative isolate">
@@ -40,7 +49,6 @@ export default function Home() {
                 <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/5 lg:-m-4 lg:rounded-xl lg:p-4">
                   <Image src="/dashboard-preview.jpg" alt="product preview" height={866} width={1364} quality={100}  />
                 </div>
-
               </div>
 
         </div>

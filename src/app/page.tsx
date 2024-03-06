@@ -71,9 +71,20 @@ export default function Home() {
               className='relative left-[calc(50%-13rem)] aspect-[1155/678]  w-[36.125rem] -translate-x rotate-[29deg] bg-gradient-to-tr from-[#b671e8] via-[#ef7777] to-[#eb54e1cb]  opacity-10 sm:left-[calc(50%-42rem)] sm:w-[72.1875rem]' />
 
           </div>
-
         </div>
       </div>
+      
+     <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56 ">
+        <div className="mb-12 px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl sm:text-center">
+            <h2>Start chatting in minutes </h2>
+            <p className="mt-4 text-gray-600 text-lg">
+              okokokokokokok okokokokoko okokokokok okokokok okokokok okokoko kokokok okoko ko
+            </p>
+          </div>
+        </div>
+     </div>
+
     </>
   );
 }

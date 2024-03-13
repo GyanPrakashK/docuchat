@@ -29,7 +29,7 @@ export default function Home() {
  })} href="/dashboard" target="_blank">Get Start<ArrowRight className="ml-2 h-5 w-5"/></Link> */}
         <div className="mt-5">
           <Link href="/dashboard" target="_blank">
-            <Button >Get Started <ArrowRight className="mx-2" /></Button>
+            <Button >Get Started <ArrowRight className="mx-1 size-5" /></Button>
           </Link>
         </div>
       </ MaxWidhWrapper>

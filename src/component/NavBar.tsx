@@ -3,7 +3,7 @@ import React from 'react'
 import MaxWidhWrapper from './MaxWidhWrapper'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import { Ghost } from 'lucide-react'
+// import { Ghost } from 'lucide-react'
 import { LoginLink, RegisterLink } from '@kinde-oss/kinde-auth-nextjs'
 
 

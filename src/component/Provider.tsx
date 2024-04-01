@@ -1,11 +1,11 @@
 "use client"
 
-import React, { useState } from 'react'
-import {QueryClient} from "@tanstack/react-query"
+import React, {  PropsWithChildren, useState } from 'react'
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import { trpc } from '@/app/_trpc/Client'
 import { httpBatchLink } from '@trpc/client'
 
-const Provider = () => {
+const Provider = ({children}: PropsWithChildren) => {
  const [queryClient] = useState(()=> new QueryClient())
  const [trpcClient] = useState(()=> trpc.createClient({
     links: [
@@ -14,6 +14,12 @@ const Provider = () => {
         })
     ]
  }))
+ return (
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+    <QueryClientProvider client={queryClient}>
+    {children}</QueryClientProvider>   
+    </trpc.Provider>
+ )
 }
 
 export default Provider

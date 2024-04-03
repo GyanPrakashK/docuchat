@@ -9,39 +9,40 @@ const page = () => {
   const  searchParams = useSearchParams()
   const origin = searchParams.get('origin')
   
-//   const { data , error} = trpc.authCallback.useQuery(undefined);
+  const { data , error} = trpc.authCallback.useQuery(undefined);
                               
-// useEffect(() => {
-//   if (data?.success){
-//     router.push(origin?`/$(origin)`: "/dashboard");
-//   }else if (error?.data?.code === "UNAUTHORIZED"){
-//     console.log('error: ', error); 
-//     router.push("/sign-in");
-//   }
+useEffect(() => {
+  if (data?.success){
+    router.push(origin ? `/${origin}` : '/dashboard');
+
+  }else if (error?.data?.code === "UNAUTHORIZED"){
+    console.log('error: ', error); 
+    router.push("/sign-in");
+  }
 
   
-// }, [data, error, router,origin])
-//-------
-const query = trpc.authCallback.useQuery(undefined, {
-  retry: true,
-  retryDelay: 500,
-});
+}, [data, error, router,origin])
+//---------------------------------------------------------
+// const query = trpc.authCallback.useQuery(undefined, {
+//   retry: true,
+//   retryDelay: 500,
+// });
 
-// Check for errors in the query result
-if (query.error) {
-  const errData = query.error.data;
-  if (errData?.code === 'UNAUTHORIZED') {
-    router.push('/sign-in');
-  } else {
-    // Handle other types of errors
-    console.error("An error occurred:", query.error);
-  }
-}
+// // Check for errors in the query result
+// if (query.error) {
+//   const errData = query.error.data;
+//   if (errData?.code === 'UNAUTHORIZED') {
+//     router.push('/sign-in');
+//   } else {
+//     // Handle other types of errors
+//     console.error("An error occurred:", query.error);
+//   }
+// }
 
-// Continue with other logic based on the query result
-if (query.data?.success) {
-  router.push(origin ? `/${origin}` : '/dashboard');
-}
+// // Continue with other logic based on the query result
+// if (query.data?.success) {
+//   router.push(origin ? `/${origin}` : '/dashboard');
+// }
 
  return(
   <div className=' w-full mt-24 flex justify-center'>

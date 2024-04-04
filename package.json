@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@kinde-oss/kinde-auth-nextjs": "^2.2.2",
     "@kinde-oss/kinde-nodejs-sdk": "^1.2.3",
     "@prisma/client": "^5.11.0",
@@ -32,8 +33,10 @@
     "react": "^18",
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.51.2",
     "react-loading-skeleton": "^3.4.0",
     "react-pdf": "^7.7.1",
+    "react-resize-detector": "^10.0.1",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.7.0",

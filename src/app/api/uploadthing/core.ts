@@ -21,6 +21,20 @@ export const ourFileRouter = {
       
       return { userId: user.id };
     })
+    //----
+
+    // .onUploadComplete(async ({ metadata, file }) => {
+    //   const createdFile = await db.file.create({
+    //     data: {
+    //       key: file.key,
+    //       name: file.name,
+    //       userId: metadata.userId,
+    //       url: file.url,
+    //       uploadStatus: "PROCESSING",
+    //     },
+    //   }); 
+
+    //----
     .onUploadComplete(async ({ metadata, file }) => {
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
       // return { uploadedBy: metadata.userId };
@@ -29,7 +43,9 @@ export const ourFileRouter = {
             key: file.key,
             name: file.name,
             userId: metadata.userId,
-            url:`https://uploadthind-prod.s3.us-west-2.amazonaws.com/${file.key}`,
+           
+            // url: `https://uploadthing-prod.s3.us-west-2.amazonaws.com/${file.key}`,
+            url:file.url,
             uploadStatus: "PROCESSING",
           }
         })

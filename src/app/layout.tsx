@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import NavBar from "@/component/NavBar";
 import Provider from "@/component/Provider";
+import 'simplebar-react/dist/simplebar.min.css';
 import "react-loading-skeleton/dist/skeleton.css"
 import { Toaster } from "@/components/ui/toaster";
 
